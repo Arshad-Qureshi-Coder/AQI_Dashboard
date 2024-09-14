@@ -1,0 +1,77 @@
+.dash{
+    height:100vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    
+}
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+.nav-btn{
+    display: flex;
+}
+
+.main-container {
+    height: calc(100vh - 20vh);
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-right: 15px;
+    /* border: 1px solid red; */
+
+    /* Scrollbar styling */
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+    width: 100%;
+  }
+
+  .dash .main-container.with-sidebar {
+    width: calc(100% - 250px); /* Assuming the sidebar is 250px wide */
+  }
+  
+  .dash .main-container.no-sidebar {
+    width: 100%;
+  }
+
+
+  .theme-switcher {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Light Theme */
+  .dashboard-container.light {
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  .dashboard-container.light .theme-switcher {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Dark Theme */
+  .dashboard-container.dark {
+    background-color: #333;
+    color: #ffffff;
+  }
+  
+  .dashboard-container.dark .theme-switcher {
+    background-color: #555;
+    color: #fff;
+  }
+
+  .bi:hover {
+    color: #007bff; /* Change the icon color on hover */
+  }
+
+
+

@@ -1,38 +1,60 @@
-.App {
+
+
+.card{
+    
+    box-shadow: rgba(99, 99, 99, 0.2) 
+    0px 2px 8px 0px;
+    border-radius: 0 !important;
+}
+
+
+/* Drop-Down */
+
+/* Container for the dropdown items */
+.dropdown-menu-container {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  background-color: #f8f9fa;
+}
+
+/* Dropdown menu container when open */
+.dropdown-menu-container.open {
+  max-height: 500px; /* Adjust the max height based on the number of items */
+  transition: max-height 0.5s ease-in;
+}
+
+/* Styling for the dropdown menu items */
+.dropdown-menu-custom {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dropdown-item-custom {
+  display: block;
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.dropdown-item-custom:hover {
+  background-color: #e9ecef;
+}
+
+  /*Floor start  */
+  .no-hover {
+    pointer-events: auto;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .no-hover:hover,
+  .no-hover:focus,
+  .no-hover:active {
+    background-color: inherit !important;
+    color: inherit !important;
+    box-shadow: none !important;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  
+
+  /* floor End */

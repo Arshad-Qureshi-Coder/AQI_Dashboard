@@ -1,0 +1,108 @@
+/* .nav-b1 {
+  background-color: ;
+} */
+.logoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  font-size: 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 80px;
+  margin: 28px 83px;
+  padding-bottom: 13px;
+}
+
+  .navbar{
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.16) 
+                  0px 1px 4px;
+    /* background-color: ; */
+  }
+
+  .title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(90, 172, 186);
+    font-size: 30px;
+  }
+
+  #navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+  }
+
+  .nav-link.active {
+    background-color: #fff !important;
+    font-weight: 500 !important;
+}
+  .nav-link.active:hover {
+    background-color: #2d60e1 !important;
+    color:#fff !important
+}
+
+/* .date {
+  background-color: #f9fbff;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 2px 20px;
+  padding-right: 5px;
+  gap: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 5px;
+}
+
+.date p {
+  padding-top: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9c9fa1;
+}
+
+.date-picker {
+  border: 1px solid #9c9fa1;
+  position: relative;
+  padding-left: 3px;
+  display: flex;
+  text-align: center;
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.date-picker .form-control {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  height: 22px;
+  font-size: 14px;
+  color: #9c9fa1;
+  font-weight: 500;
+
+  border-radius: 5px;
+} */
+
+
+  /* .logoDiv img {
+    box-shadow: rgba(50, 50, 93, 0.25) 
+                  0px 6px 12px -2px,
+                rgba(0, 0, 0, 0.3) 
+                  0px 3px 7px -3px;
+  } */
+  
+  /* .logoDiv>p {
+    font-weight: 100;
+    margin-bottom: 0 !important;
+    border-bottom: 5px solid rgb(15, 15, 15);
+  }
+  
+  .logoDiv>span {
+    font-weight: 500;
+    border-bottom: 1px solid rgb(14, 13, 13);
+  } */
+  

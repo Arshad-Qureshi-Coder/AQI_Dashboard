@@ -1,0 +1,181 @@
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Adjust the width as needed */
+  height: 100vh;
+  background-color: #fff;
+  /* border-right: 1px solid #ccc; */
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000; /* Ensure it appears on top */
+}
+.items {
+  margin-top: 20px;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+.SideBar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: rgb(90, 172, 186);
+  border: none;
+  cursor: pointer;
+}
+
+/* .sidebar-toggle:hover {
+  background-color: #ddd;
+} */
+.toggle-icon {
+  color: #060606;
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-link.active {
+  background-color: #e0e0e0;
+}
+
+/* Container for the dropdown items */
+.dropdown-menu-container {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  background-color: #f8f9fa;
+}
+
+/* Dropdown menu container when open */
+.dropdown-menu-container.open {
+  max-height: 500px; /* Adjust the max height based on the number of items */
+  transition: max-height 0.5s ease-in;
+}
+
+/* Styling for the dropdown menu items */
+.dropdown-menu-custom {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item-custom {
+  display: block;
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-item-custom.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dropdown-item-custom:hover {
+  background-color: #e9ecef;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+
+
+/* Base styles for the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  /* background-color: #111; */
+  color: white;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Hide sidebar by default */
+}
+
+.sidebar.show {
+  transform: translateX(0); /* Show sidebar when toggled */
+}
+
+/* Sidebar content */
+.nav-link {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link i {
+  margin-right: 10px;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 576px) {
+  .sidebar {
+    width: 240px;
+    height: 100vh;
+    transform: translateX(-100%); /* Hide sidebar by default on mobile */
+  }
+
+  .sidebar.show {
+    transform: translateX(0); /* Show sidebar when toggled on mobile */
+  }
+
+  .sidebar-toggle {
+    display: block; /* Show toggle button on mobile */
+  }
+}
+
+
+
+
+

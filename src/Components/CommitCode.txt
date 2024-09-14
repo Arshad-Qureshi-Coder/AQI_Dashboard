@@ -1,0 +1,164 @@
+floor-room code-:
+  {/* {data?.floors.map((floor) => (
+                            <button key={floor.floor_id} onClick={() => handleFloorClick(floor)}>
+                                Floor {floor.floor_id}
+                            </button>
+                        ))} */}
+                    </div>
+                    {/* {selectedFloor && (
+                        <div>
+                            <h2>Rooms in Floor {selectedFloor.floor_id}</h2>
+                            {selectedFloor.rooms.map((room) => (
+                                <button key={room.id} onClick={() => handleRoomClick(room)}>
+                                    {room.setup.Name}
+                                </button>
+                            ))}
+                        </div>
+                    )} */}
+
+
+                    components-:
+                       {/* <div className='card w-50 h-50'>
+                        <TempLineChart />
+                    </div>
+                    <div className='card w-50 h-50'>
+                        <TempBarChart/>
+                    </div>
+                    <div className='card w-50 h-50'>
+                        <TempCurrentVal/>
+                    </div>
+                    <div className='card w-50 h-50'>
+                        <CombinePieChart/>
+                    </div>
+                    <div className='card w-50 h-50'>
+                        <CombineAreaChart/>
+                    </div>
+                    <div className='card w-50 h-50'>
+                        <CombineBarChart/>
+                    </div> */}
+                    {/* <ComponentMapper components={components} /> */}
+                    {/* <div >
+                    {ComponentMap.map((data) => (
+        <div key={data.id} className='card w-50 h-50'>
+          {data.component}
+        </div>
+      ))}
+                    </div> */}
+
+
+
+<aside className="col-md-3 col-lg-2 bg-dark text-white p-0 vh-100">
+                    {/* Sidebar content */}
+                    <div className="d-flex flex-column align-items-center py-4">
+                        {/* Sidebar items */}
+                        <ul className="nav flex-column w-100">
+                            <li className="nav-item">
+                                <a href="#" className="nav-link text-white">
+                                    <i className="bi bi-house"></i> Home
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link text-white">
+                                    <i className="bi bi-speedometer2"></i> Dashboard
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link text-white">
+                                    <i className="bi bi-box"></i> Products
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link text-white">
+                                    <i className="bi bi-people"></i> Customers
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+
+ {/* Render non-current components */}
+                  {/* <div className="row">
+                    {ComponentMap.filter(data => data.category  !== 'current').map((data) => (
+                      <div key={data.id} className="col-md-6 mb-3">
+                        <div className="card" style={{height: '400px', width:'100%'}}>
+                          {data.component}
+                        </div>
+                      </div>
+                    ))}
+                  </div> */}
+               {/* <div className="container"> */}
+
+
+
+
+
+
+///**** SideBar*****////
+
+import React from 'react';
+import './SideBar.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
+import { Link, useLocation } from 'react-router-dom';
+import {RoomSelect} from '../RoomSelect/RoomSelect'
+import { FloorSelect } from '../FloorSelect/FloorSelect';
+const SideBar = () => {
+  const location = useLocation();
+
+  return (
+    <nav className="navbar navbar-expand-lg bg-white">
+      <div className="container-fluid">
+        <ul className="navbar-nav me-auto">
+          <li className="nav-item">
+            <Link to="/" className={`nav-link text-dark ${location.pathname === '/' ? 'active' : ''}`}>
+              <i className="bi bi-speedometer2 me-2"></i>
+              Dashboard
+            </Link>
+          </li>
+        </ul>
+        <div className='d-flex'>
+            <FloorSelect/>
+            <RoomSelect/>
+        </div>
+        <ul className="navbar-nav mx-auto d-flex justify-content-center">
+          <li className="nav-item">
+            <Link to="tempraturePage" className={`nav-link text-dark ${location.pathname === '/tempraturePage' ? 'active' : ''}`}>
+              <i className="bi bi-thermometer-half me-2"></i>
+              Temperature Page
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <a href="aqiPage" className="nav-link text-dark">
+              <i className="bi bi-cloud-fog2-fill me-2"></i>
+              AQI Page
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="HumidityPage" className="nav-link text-dark">
+              <i className="bi bi-droplet-fill me-2"></i>
+              Humidity Page
+            </a>
+          </li>
+        </ul>
+
+
+          <div className="dropdown ms-lg-3">
+            <a href="#" className="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://via.placeholder.com/30" alt="User" width="30" height="30" className="rounded-circle me-2" />
+              <strong>Username</strong>
+            </a>
+            <ul className="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser1">
+              <li><a className="dropdown-item" href="#">New project...</a></li>
+              <li><a className="dropdown-item" href="#">Settings</a></li>
+              <li><a className="dropdown-item" href="#">Profile</a></li>
+              <li><hr className="dropdown-divider" /></li>
+              <li><a className="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+  );
+};
+
+export default SideBar;
