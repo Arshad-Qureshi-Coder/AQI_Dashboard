@@ -1,0 +1,78 @@
+/* YouTubeSidebar.css */
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #212121;
+    padding-top: 20px;
+    transition: width 0.3s;
+    z-index: 1000;
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .sidebar-toggle {
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: right;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #333333;
+  }
+  
+  .nav-link i {
+    font-size: 20px;
+    width: 40px;
+  }
+  
+  .nav-link-text {
+    font-size: 16px;
+    display: inline-block;
+    transition: opacity 0.3s;
+  }
+  
+  .sidebar.collapsed .nav-link-text {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .sidebar.collapsed .nav-link i {
+    text-align: center;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 80px;
+    }
+  
+    .sidebar.collapsed {
+      width: 0;
+      overflow: hidden;
+    }
+  
+    .nav-link-text {
+      display: none;
+    }
+  
+    .sidebar-toggle {
+      font-size: 20px;
+    }
+  }
+  
