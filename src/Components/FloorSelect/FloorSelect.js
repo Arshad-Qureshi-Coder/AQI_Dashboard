@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { DashboardContext } from '../DashboardUseContext/DashboardProvider';
-
 
 export const FloorSelect = () => {
   const { data, setSelectedFloor, setSelectedRoom } = useContext(DashboardContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -16,32 +16,48 @@ export const FloorSelect = () => {
     setIsDropdownOpen(false); // Close the dropdown after selecting a floor
   };
 
+  // Close dropdown when clicking outside of it
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
   return (
-    <div>
+    <div ref={dropdownRef}>
       {data?.floors && (
         <div className="dropdown mb-3">
-          <div className="nav-link text-dark dropdown-toggle" 
-        onClick={handleDropdownToggle}
-        aria-expanded={isDropdownOpen}
-        >
-        <i className="bi bi-file-earmark-text me-2"></i>
-            Select Floor
-      </div>
-          <div className={`dropdown-menu-container ${isDropdownOpen ? 'open' : ''}`}>
-            <ul className="dropdown-menu-custom">
+          <button
+            className="btn  dropdown-toggle"
+            type="button"
+            onClick={handleDropdownToggle}
+            aria-expanded={isDropdownOpen}
+            aria-haspopup="true"
+          >
+            <i className="bi bi-building me-2"></i> Select Floor
+          </button>
+
+          {isDropdownOpen && (
+            <ul className="dropdown-menu show">
               {data.floors.map((floor) => (
                 <li key={floor.floor_id}>
                   <a
-                    className="dropdown-item-custom"
+                    className="dropdown-item"
                     href="#!"
                     onClick={() => handleFloorClick(floor)}
                   >
-                    Select Floor {floor.floor_id}
+                    Floor {floor.floor_id}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          )}
         </div>
       )}
     </div>

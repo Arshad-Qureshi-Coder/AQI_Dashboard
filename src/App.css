@@ -56,5 +56,9 @@
     box-shadow: none !important;
   }
   
+button:hover {
+  background-color: rgb(50, 50, 183);
+  color: white;
 
+}
   /* floor End */
